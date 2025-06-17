@@ -61,7 +61,7 @@ npm install -g live-server
 live-server
 ```
 
-🔧 Technologies Used
+## 🔧 Technologies Used
 
 - ⚛️ **React**
 - 🎨 **Tailwind CSS**
