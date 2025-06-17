@@ -73,13 +73,15 @@ live-server
 
 🧑‍💻 Author
 Ahmed Hamdy
-GitHub: @ahmedhamdy272
+
+GitHub: 
+@ahmedhamdy272
 
 📜 License
 This project is open source and available under the MIT License.
 
 💡 Want to improve this site? Pull requests and feedback are welcome!
-
+```
 yaml
 Copy
 Edit
