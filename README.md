@@ -1,6 +1,6 @@
 # 🏀 Nike-Inspired E-Commerce Website
 
-![Site Preview](./screenshot.jpeg)
+![Site Preview](./public/images/screenshot.jpeg)
 
 A modern, responsive, and visually engaging Nike product showcase built with HTML, CSS, and JavaScript. This website replicates the aesthetic and user experience of a professional e-commerce store, with clean layouts, hover effects, and intuitive browsing.
 
@@ -17,7 +17,7 @@ A modern, responsive, and visually engaging Nike product showcase built with HTM
 🔗 [Visit the Website](https://ahmedhamdy272.github.io/Nike/)
 
 ## 📂 Project Structure
-
+```
 Nike/
 ├── index.html
 ├── css/
@@ -28,7 +28,7 @@ Nike/
 │ └── [product images, UI assets]
 ├── screenshot.jpeg
 └── README.md
-
+```
 bash
 Copy
 Edit
