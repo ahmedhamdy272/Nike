@@ -19,15 +19,24 @@ A modern, responsive, and visually engaging Nike product showcase built with HTM
 ## 📂 Project Structure
 ```
 Nike/
+├── Components/
+├── hooks/
+├── public/
+      └── images/
+├── src/
+      └── assets/
+├── .gitignore
+├── README.md
+├── eslint.config.js
 ├── index.html
-├── css/
-│ └── style.css
-├── js/
-│ └── script.js
-├── images/
-│ └── [product images, UI assets]
-├── screenshot.jpeg
-└── README.md
+├── package-lock.json
+├── package.json
+├── tailwind.config.js
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+
 ```
 bash
 Copy
