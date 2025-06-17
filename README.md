@@ -2,15 +2,15 @@
 
 ![Site Preview](./public/images/screenshot.jpeg)
 
-A modern, responsive, and visually engaging Nike product showcase built with HTML, CSS, and JavaScript. This website replicates the aesthetic and user experience of a professional e-commerce store, with clean layouts, hover effects, and intuitive browsing.
+A sleek, responsive, and modern e-commerce interface built with **React**, **Tailwind CSS**, and **TypeScript**. This project emulates the design and user experience of a professional Nike storefront.
 
 ## 🌟 Features
 
-- 🛍️ **Responsive Product Grid** – Dynamic layout that adapts to mobile, tablet, and desktop screens.
-- 🎥 **Hover Interactions** – Product highlights, color variations, and ratings upon hover.
-- 📱 **Mobile-Friendly Navigation** – Optimized header and menu for mobile browsing.
-- 🎨 **Modern UI/UX Design** – Inspired by Nike’s product visual language and branding.
-- 💼 **Multiple Pages** – Including product collections, details, and call-to-action banners.
+- 🛍️ **Dynamic Product Grid** – Interactive product listings with hover effects.
+- 📱 **Responsive Layout** – Mobile-first design using Tailwind’s utility-first classes.
+- ⚛️ **Component-Based Architecture** – Clean and reusable components in React.
+- 💡 **Custom Hooks** – Abstract logic for state management and effects.
+- 🚀 **Optimized Performance** – Vite build tool for lightning-fast dev and production.
 
 ## 🖥️ Live Demo
 
@@ -37,18 +37,18 @@ Nike/
 ├── tsconfig.node.json
 └── vite.config.ts
 
-```
+
 bash
 Copy
 Edit
+```
 
 ## ⚙️ Getting Started
 
 To run the project locally:
-
+```bash
 1. Clone the repository:
 
-```bash
 git clone https://github.com/ahmedhamdy272/Nike.git
 cd Nike
 Open index.html directly in your browser
@@ -63,15 +63,13 @@ live-server
 
 🔧 Technologies Used
 
-HTML5
+- ⚛️ **React**
+- 🎨 **Tailwind CSS**
+- 🔤 **TypeScript**
+- ⚡ **Vite** (for fast builds and development)
+- 📦 **npm** (or **yarn** for dependency management)
 
-CSS3 (Flexbox & Grid)
 
-JavaScript (Vanilla)
-
-📸 Screenshot
-Included in this repo:
-<img src="./public/images/screenshot.jpeg">
 
 🧑‍💻 Author
 Ahmed Hamdy
