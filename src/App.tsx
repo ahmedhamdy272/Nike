@@ -133,9 +133,8 @@ const RouteHandler: React.FC = () => {
   );
 };
 
-//  Main App Component
 const App: React.FC = () => {
-  const routerBasename = import.meta.env.DEV ? "/" : "/Nike";
+  const routerBasename = typeof window !== "undefined" && window.location.hostname.endsWith(".github.io") ? "/Nike" : "/";
   return (
     <ToastProvider>
       <Router basename={routerBasename}>
