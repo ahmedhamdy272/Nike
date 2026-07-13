@@ -1,0 +1,138 @@
+/* ============================================================
+   SneakerReveal.module.css
+   Transparent, text-free animation stage only.
+   Drop this component into any section — it supplies no
+   background of its own, so it inherits whatever sits behind it.
+   ============================================================ */
+
+.stagePerspective {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 1400px;
+}
+
+.parallaxTilt {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.camera {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 55%;
+  will-change: transform;
+}
+
+.shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 6%;
+  width: 46%;
+  height: 22px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0) 72%
+  );
+  transform: translate(-50%, 0);
+  filter: blur(2px);
+  opacity: 0;
+  will-change: transform, opacity;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.explodeGroup {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.layer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  max-width: 78%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.35));
+  will-change: transform, filter, opacity;
+  backface-visibility: hidden;
+  pointer-events: none;
+}
+
+.layer img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.layerShoe {
+  z-index: 6;
+  max-width: 68%;
+}
+.layerL1 {
+  z-index: 5;
+  max-width: 66%;
+}
+.layerL2 {
+  z-index: 4;
+  max-width: 68%;
+}
+.layerL3 {
+  z-index: 3;
+  max-width: 69%;
+}
+.layerL4 {
+  z-index: 2;
+  max-width: 69%;
+}
+
+.finalShoe {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 62%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 7;
+  filter: drop-shadow(0 20px 22px rgba(0, 0, 0, 0.4));
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.finalShoe img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.floatWrap {
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layer,
+  .explodeGroup {
+    display: none;
+  }
+  .finalShoe {
+    opacity: 1;
+  }
+  .shadow {
+    opacity: 1;
+  }
+}
