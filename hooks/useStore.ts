@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { Product, shoesCatalog } from "../src/constant/products";
+
 export type { Product };
 
 export interface CartItem extends Product {
@@ -42,27 +43,30 @@ export const parsePrice = (priceStr: string): number => {
   return isNaN(num) ? 0 : num;
 };
 
+// Helper to normalize image paths to prepend BASE_URL dynamically in production
+const normalizeProductPaths = (prod: Product): Product => {
+  const normalizePath = (p: string) => {
+    if (p.startsWith("/") && !p.startsWith(import.meta.env.BASE_URL)) {
+      return `${import.meta.env.BASE_URL}${p.substring(1)}`;
+    }
+    return p;
+  };
+  return {
+    ...prod,
+    image: normalizePath(prod.image),
+    images: prod.images ? prod.images.map(normalizePath) : [normalizePath(prod.image)]
+  };
+};
+
 export const useStore = create<StoreState>((set, get) => {
   // Load initial catalog, favorites, and cart from local storage if available
   const initialCatalog = (() => {
     try {
       const saved = localStorage.getItem("nike_catalog");
       const list = saved ? JSON.parse(saved) : shoesCatalog;
-      return list.map((prod: Product) => {
-        const normalizePath = (p: string) => {
-          if (p.startsWith("/") && !p.startsWith(import.meta.env.BASE_URL)) {
-            return `${import.meta.env.BASE_URL}${p.substring(1)}`;
-          }
-          return p;
-        };
-        return {
-          ...prod,
-          image: normalizePath(prod.image),
-          images: prod.images ? prod.images.map(normalizePath) : [normalizePath(prod.image)]
-        };
-      });
+      return list.map(normalizeProductPaths);
     } catch {
-      return shoesCatalog;
+      return shoesCatalog.map(normalizeProductPaths);
     }
   })();
 
@@ -123,7 +127,8 @@ export const useStore = create<StoreState>((set, get) => {
 
     addCatalogProduct: (product) => {
       set((state) => {
-        const newCatalog = [...state.catalog, product];
+        const normalized = normalizeProductPaths(product);
+        const newCatalog = [...state.catalog, normalized];
         localStorage.setItem("nike_catalog", JSON.stringify(newCatalog));
         return { catalog: newCatalog };
       });
@@ -139,7 +144,8 @@ export const useStore = create<StoreState>((set, get) => {
 
     updateCatalogProduct: (product) => {
       set((state) => {
-        const newCatalog = state.catalog.map((item) => item.id === product.id ? product : item);
+        const normalized = normalizeProductPaths(product);
+        const newCatalog = state.catalog.map((item) => item.id === product.id ? normalized : item);
         localStorage.setItem("nike_catalog", JSON.stringify(newCatalog));
         return { catalog: newCatalog };
       });

@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         {/* Branding and Social */}
         <div className="flex flex-row gap-2.5 items-center group">
           <img
-            src="/images/image_12.png"
+            src={`${import.meta.env.BASE_URL}images/image_12.png`}
             alt="Nike Dunk Logo"
             className="w-10 h-auto object-contain transform -rotate-12 group-hover:rotate-0 transition-transform duration-300"
           />

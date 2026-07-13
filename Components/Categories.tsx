@@ -49,6 +49,21 @@ const cardVariants: Variants = {
 const Categories: React.FC = () => {
   const navigate = useNavigate();
 
+  const normalizedCategories = React.useMemo(() => {
+    return categories.map((cat) => {
+      const normalizePath = (p: string) => {
+        if (p.startsWith("/") && !p.startsWith(import.meta.env.BASE_URL)) {
+          return `${import.meta.env.BASE_URL}${p.substring(1)}`;
+        }
+        return p;
+      };
+      return {
+        ...cat,
+        image: normalizePath(cat.image)
+      };
+    });
+  }, []);
+
   const handleCategoryClick = (categoryName: string) => {
     navigate("/products", { state: { category: categoryName } });
   };
@@ -78,7 +93,7 @@ const Categories: React.FC = () => {
         viewport={{ once: true, amount: 0.1 }}
         variants={containerVariants}
       >
-        {categories.map((cat) => (
+        {normalizedCategories.map((cat) => (
           <motion.div
             key={cat.name}
             variants={cardVariants}

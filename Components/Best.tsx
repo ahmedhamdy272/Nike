@@ -30,7 +30,7 @@ const Best: React.FC = () => {
         {/* Card 1: Large Image - Spans 2 rows */}
         <div className="relative bg-zinc-950 rounded-3xl overflow-hidden md:row-span-2 group border border-zinc-100 shadow-2xl h-[380px] md:h-auto">
           <img
-            src="/images/image_11.jpg"
+            src={`${import.meta.env.BASE_URL}images/image_11.jpg`}
             alt="Colorful Sneaker"
             loading="lazy"
             decoding="async"
@@ -54,7 +54,7 @@ const Best: React.FC = () => {
         <div className="relative bg-gradient-to-br from-[#103c35] to-[#1B4D3E] rounded-3xl overflow-hidden flex items-center justify-center p-8 group border border-zinc-100 shadow-2xl min-h-[220px] cursor-pointer">
           <div className="absolute inset-0">
             <img
-              src="/images/image_1.png"
+              src={`${import.meta.env.BASE_URL}images/image_1.png`}
               alt="Background Shoes"
               loading="lazy"
               decoding="async"
@@ -79,7 +79,7 @@ const Best: React.FC = () => {
         {/* Card 3: Small Image */}
         <div className="relative bg-zinc-950 rounded-3xl overflow-hidden group border border-zinc-100 shadow-2xl min-h-[220px]">
           <img
-            src="/images/image_2.jpeg"
+            src={`${import.meta.env.BASE_URL}images/image_2.jpeg`}
             alt="White Sneaker"
             loading="lazy"
             decoding="async"
@@ -102,7 +102,7 @@ const Best: React.FC = () => {
         {/* Card 4: Large Colorful Image - Spans 2 columns */}
         <div className="relative bg-zinc-950 rounded-3xl overflow-hidden md:col-span-2 group border border-zinc-100 shadow-2xl h-[260px] md:h-auto">
           <img
-            src="/images/image_3.jpg"
+            src={`${import.meta.env.BASE_URL}images/image_3.jpg`}
             alt="Colorful Modern Sneaker"
             loading="lazy"
             decoding="async"
