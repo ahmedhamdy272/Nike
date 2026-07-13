@@ -94,11 +94,11 @@ const Hook: React.FC = () => {
   };
 
   return (
-    <div className="w-full bg-zinc-950 py-16 px-6 md:px-12 lg:px-20 text-white flex flex-col justify-center relative overflow-hidden">
+    <div className="w-full bg-zinc-950 py-12 md:py-16 px-4 md:px-12 lg:px-20 text-white flex flex-col justify-center relative overflow-hidden">
       {/* Decorative Radial Background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_120%,#103c35_0%,transparent_55%)] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="max-w-7xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         {/* Left Column: Live Reviews Feed */}
         <div className="col-span-12 lg:col-span-6 flex flex-col space-y-6">
@@ -126,7 +126,7 @@ const Hook: React.FC = () => {
                   transition={{ duration: 0.4 }}
                   className="bg-zinc-900/60 border border-white/5 p-5 rounded-2xl backdrop-blur-md flex flex-col gap-3 shadow-lg hover:border-yellow-400/25 transition-colors"
                 >
-                  <div className="flex justify-between items-start">
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-4 w-full">
                     <div className="flex items-center gap-3">
                       <div className="w-9 h-9 rounded-full bg-zinc-800 flex items-center justify-center text-zinc-400 border border-white/10">
                         <FaUser size={14} />
@@ -138,7 +138,7 @@ const Hook: React.FC = () => {
                         </span>
                       </div>
                     </div>
-                    <div className="flex flex-col items-end gap-1">
+                    <div className="flex flex-row sm:flex-col items-center sm:items-end justify-between w-full sm:w-auto border-t border-white/5 sm:border-none pt-2 sm:pt-0 mt-1 sm:mt-0 gap-1.5 shrink-0">
                       <div className="flex gap-0.5">
                         {[...Array(5)].map((_, i) => (
                           <FaStar
@@ -161,7 +161,7 @@ const Hook: React.FC = () => {
         {/* Right Column: Interactive Review Form */}
         <div className="col-span-12 lg:col-span-6">
           <motion.div 
-            className="bg-zinc-900/40 border border-white/10 p-8 rounded-3xl backdrop-blur-xl shadow-2xl relative overflow-hidden"
+            className="bg-zinc-900/40 border border-white/10 p-5 sm:p-8 rounded-3xl backdrop-blur-xl shadow-2xl relative overflow-hidden"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
